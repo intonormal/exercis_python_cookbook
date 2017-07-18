@@ -5,7 +5,11 @@ import heapq
 nums = [1, 8, 2, 23, 7, -4, 18, 23, 42, 37, 2]
 print(heapq.nlargest(3, nums)) # Prints [42, 37, 23]
 print(heapq.nsmallest(3, nums)) # Prints [-4, 1, 2]
+print(max(nums))
+print(min(nums))
 
+print(sorted(nums)[:3])
+print(sorted(nums)[-3:])
 
 portfolio = [
     {'name': 'IBM', 'shares': 100, 'price': 91.1},
@@ -19,3 +23,9 @@ cheap = heapq.nsmallest(3, portfolio, key=lambda s: s['price'])
 expensive = heapq.nlargest(3, portfolio, key=lambda s: s['price'])
 print(cheap)
 print(expensive)
+
+
+nums = [1, 8, 2, 23, 7, -4, 18, 23, 42, 37, 2]
+heap = list(nums)
+heapq.heapify(heap)
+print(heap)#堆数据结构最重要的特征是 heap[0] 永远是最小的元素。
